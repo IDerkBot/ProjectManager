@@ -1,0 +1,32 @@
+﻿<Page x:Class="ProjectManager.Pages.ProjectPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ProjectManager.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ProjectPage">
+
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="30"/>
+			<RowDefinition Height="auto"/>
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="*"/>
+			<ColumnDefinition Width="300"/>
+		</Grid.ColumnDefinitions>
+		<TextBlock Grid.Column="1" Text="{Binding Title}"/>
+		<Image Grid.Column="1" Grid.Row="1" Width="290" Margin="5" Height="350" Stretch="Uniform">
+			<Image.Source>
+				<Binding Path="Image">
+					<Binding.TargetNullValue>
+						<ImageSource>/Resources/Images/notfound.jpg</ImageSource>
+					</Binding.TargetNullValue>
+				</Binding>
+			</Image.Source>
+		</Image>
+
+	</Grid>
+</Page>
